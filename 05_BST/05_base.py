@@ -102,8 +102,15 @@ class RootNode:  # BST structure
 
             self.__print_tree(node._child_left, lvl + 5)
 
+    def __height_recursive(self, node):
+        if node is None:
+            return 0
+        l_height = self.__height_recursive(node._child_left)
+        r_height = self.__height_recursive(node._child_right)
+        return max(l_height, r_height) + 1
+
     def height(self):
-        if self._root_node is not None:
+        return self.__height_recursive(self._root_node)
 
 
 class TreeNode:
@@ -119,6 +126,15 @@ def main():
     bst.insert(50, "A")
     bst.insert(15, "B")
     bst.insert(62, "C")
+    bst.insert(5, "D")
+    bst.insert(20, "E")
+    bst.insert(58, "F")
+    bst.insert(91, "G")
+    bst.insert(3, "H")
+    bst.insert(8, "I")
+    bst.insert(37, "J")
+    bst.insert(60, "K")
+    bst.insert(24, "L")
 
     bst.print_tree()
 
@@ -127,6 +143,28 @@ def main():
     print(bst.search(24))
 
     bst.insert(20, "AA")
+
+    bst.insert(6, "M")
+
+    bst.delete(62)
+
+    bst.insert(59, "N")
+    bst.insert(100, "P")
+
+    bst.delete(8)
+    bst.delete(15)
+
+    bst.insert(55, "R")
+
+    bst.delete(50)
+    bst.delete(5)
+    bst.delete(24)
+
+    print(bst.height())
+
+    bst.print_as_list()
+
+    bst.print_tree()
 
 
 main()
