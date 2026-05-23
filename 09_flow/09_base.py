@@ -8,8 +8,6 @@ class Edge:
 
     def __repr__(self):
         return f"{self._cap} {self._flow} {self._res_cap} {self._is_res}"
-
-
 class Vertex:
     def __init__(self, key, value=None):
         self._key = key
