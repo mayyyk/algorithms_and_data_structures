@@ -1,4 +1,3 @@
-# skończone
 class Matrix:
     def __init__(self, matrix, values=0):
 
@@ -70,20 +69,3 @@ def transpose(matrix):
                 res_matrix[col][row] = matrix[row][col]
 
         return res_matrix
-
-
-def main():
-    m1 = Matrix([[1, 0, 2], [-1, 3, 1]])
-    print(transpose(m1))
-    print()
-
-    matrix_to_sum = Matrix((2, 3), 1)
-    print(m1 + matrix_to_sum)
-    print()
-
-    matrix_to_mul = Matrix([[3, 1], [2, 1], [1, 0]])
-    print(m1 * matrix_to_mul)
-    print()
-
-
-main()
